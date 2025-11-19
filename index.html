@@ -1,17 +1,24 @@
-<style>
-        /* INTENTO 1: Rama 'main' (Lo más probable en repos nuevos) */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set de Banners - Fragmentar la Obsolescencia (Final)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==============================================================
+           SOLUCIÓN "CACHE BUSTER":
+           El '?v=999' obliga al navegador a recargar la fuente.
+           ============================================================== */
         @font-face {
             font-family: 'Bagayo Regular';
-            src: url('https://raw.githack.com/fapydg/bagayo/main/bagayo-Regular.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /* INTENTO 2: Rama 'master' (Por si tu git es antiguo) */
-        @font-face {
-            font-family: 'Bagayo Regular Backup';
-            src: url('https://raw.githack.com/fapydg/bagayo/master/bagayo-Regular.otf') format('opentype');
+            /* Busca el archivo en la misma carpeta */
+            /* Si tu archivo tiene mayúscula en GitHub, CAMBIALO AQUÍ */
+            src: url('bagayo-Regular.otf?v=999') format('opentype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -36,13 +43,13 @@
             color: #e0e0e0;
         }
 
-        /* Aplicamos ambas fuentes en cascada */
+        /* Títulos con tu fuente + Fallback exagerado (Impact) */
+        /* Si ves Impact o Arial Black, la fuente Bagayo sigue sin cargar */
         h1, .typo-exp { 
-            font-family: 'Bagayo Regular', 'Bagayo Regular Backup', 'Courier New', monospace;
+            font-family: 'Bagayo Regular', 'Impact', 'Arial Black', sans-serif;
             text-transform: uppercase;
-            line-height: 0.85;
         }
-
+        
         h1 { 
             font-weight: normal; 
             letter-spacing: 0.05em; 
@@ -50,8 +57,10 @@
             color: #fff; 
             text-align: center;
         }
+        
+        .typo-exp { line-height: 0.85; }
 
-        /* ... (MANTÉN EL RESTO DE TU CSS DE BANNERS IGUAL QUE ANTES) ... */
+        /* --- ESTILOS DE BANNERS --- */
         .intro-text { max-width: 600px; text-align: center; opacity: 0.8; margin-bottom: 30px; }
         .banner-group { display: flex; flex-direction: column; align-items: center; gap: 15px; }
         .banner-label { font-size: 0.9rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.1em; }
@@ -129,3 +138,106 @@
             35% { opacity: 0.15; filter: blur(2px); transform: scale(0.98); color: #555; } 100% { opacity: 0; }
         }
     </style>
+</head>
+<body>
+    <h1>FRAGMENTAR LA OBSOLESCENCIA // VERSIÓN CACHE BUSTER</h1>
+    <p class="intro-text">
+        Si ves tu tipografía, el truco del "?v=999" funcionó. Si ves Impact, intenta el enlace de abajo.
+    </p>
+    
+    <p style="text-align:center; font-size: 0.8rem;">
+        <a href="bagayo-Regular.otf" target="_blank" style="color: #00ff99;">
+            👉 CLIC AQUÍ para probar descarga directa del archivo .otf
+        </a>
+    </p>
+
+    <div class="banner-group">
+        <div class="banner-label">300x250 | "Sistema Comprometido"</div>
+        <div class="banner b1">
+            <div class="logo" style="top: 15px; left: 15px;">CCPE | BIENALSUR</div>
+            <div class="b1-status"><div class="b1-dot"></div>SISTEMA OPERATIVO</div>
+            <div class="b1-error-msg">¡ERROR CRÍTICO!</div>
+            <div class="typo-exp b1-frag-reveal">FRAG<br>MEN<br>TADO</div>
+            
+            <button id="b1-ia-trigger" class="ia-btn" style="top: 15px; right: 15px; opacity: 0; animation: fadeOut 0.1s 3.5s reverse backwards;">
+                ANALIZAR FALLO
+            </button>
+            <div id="b1-ia-result"></div>
+
+            <button class="cta" style="bottom: 15px; right: 15px; animation: fadeOut 0.1s 3s reverse backwards;">VER MUESTRA</button>
+        </div>
+    </div>
+
+    <div class="banner-group">
+        <div class="banner-label">728x90 | "Escaneo Dinámico"</div>
+        <div class="banner b2">
+            <div class="logo" style="top: 10px; left: 15px;">CCPE/AECID</div>
+            <div class="b2-bg-text-slider">
+                <div class="b2-bg-text-wrapper">
+                    <div class="b2-clean-text">PROGRESO LINEAL</div>
+                    <div class="b2-clean-text">CONSUMO ACELERADO</div>
+                    <div class="b2-clean-text">OBSOLESCENCIA PROGRAMADA</div>
+                </div>
+            </div>
+            <div class="b2-frag-layer">
+                <div class="typo-exp b2-frag-text">FRAGMENTAR LA OBSOLESCENCIA</div>
+            </div>
+            <div class="b2-scanner"></div>
+            <button class="cta" style="right: 20px; top: 50%; transform: translateY(-50%);">EXPLORAR</button>
+        </div>
+    </div>
+
+    <div class="banner-group">
+        <div class="banner-label">300x600 | "Palimpsesto Digital"</div>
+        <div class="banner b3">
+            <div class="logo" style="top: 25px; left: 25px;">BIENALSUR 2025</div>
+            <div class="b3-container typo-exp">
+                <div class="b3-p p1">LA REBELIÓN<br>DE LA<br>MATERIA</div>
+                <div class="b3-p p2">NO ES<br>NOSTALGIA<br>ES POTENCIA</div>
+                <div class="b3-p p3">ROMPER<br>LA LÍNEA<br>DEL TIEMPO</div>
+            </div>
+            
+            <div id="b3-manifesto-area" class="b3-residue">
+                el residuo se vuelve signo<br>
+                el fallo se vuelve voz
+            </div>
+            
+            <button id="b3-ia-trigger" class="ia-btn" style="bottom: 80px; right: 30px;">
+                NUEVO MANIFIESTO
+            </button>
+
+            <button class="cta" style="bottom: 25px; right: 25px;">VISITAR</button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+
+        async function callGemini(prompt) { return null; }
+
+        const b1Btn = document.getElementById('b1-ia-trigger');
+        const b1Result = document.getElementById('b1-ia-result');
+        b1Btn.addEventListener('click', async () => {
+            b1Btn.textContent = "⏳ ANALIZANDO...";
+            b1Result.style.opacity = 1;
+            b1Result.textContent = "Escaneando...";
+            setTimeout(() => {
+                b1Result.textContent = "> El error es la única verdad.";
+                b1Btn.textContent = "ANALIZAR FALLO";
+            }, 1500);
+        });
+
+        const b3Btn = document.getElementById('b3-ia-trigger');
+        const b3Area = document.getElementById('b3-manifesto-area');
+        b3Btn.addEventListener('click', async () => {
+            b3Btn.textContent = "⏳ GENERANDO...";
+            b3Area.style.opacity = 0.3;
+            setTimeout(() => {
+                b3Area.innerHTML = "lo roto persiste<br>lo nuevo decae";
+                b3Area.style.opacity = 0.6;
+                b3Btn.textContent = "NUEVO MANIFIESTO";
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
