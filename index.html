@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Set de Banners - Fragmentar la Obsolescencia (GitHub Root)</title>
+    <title>Set de Banners - Fragmentar la Obsolescencia (CDN FINAL)</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* =========================================
-           CARGA DE TIPOGRAFÍA (RUTA RAÍZ)
-           ========================================= */
+        /* ==============================================================
+           SOLUCIÓN FINAL: CARGA VÍA CDN (jsDelivr)
+           Esto toma tu archivo directo del repo y arregla los permisos.
+           ============================================================== */
         @font-face {
             font-family: 'Bagayo Regular';
-            /* ALERTA: Busca el archivo exactamente al lado del HTML */
-            src: url('bagayo-Regular.otf') format('opentype');
+            /* ATENCIÓN: Si tu archivo en GitHub tiene mayúsculas diferentes, CAMBIA EL FINAL DE ESTA URL */
+            src: url('https://cdn.jsdelivr.net/gh/fapydg/bagayo/bagayo-Regular.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -32,7 +33,7 @@
 
         body {
             background-color: #1a1a1a;
-            font-family: 'Saira Condensed', sans-serif;
+            font-family: 'Saira Condensed', sans-serif; /* Fuente base */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -41,25 +42,23 @@
             color: #e0e0e0;
         }
 
-        /* Aplicación de la fuente Bagayo a Títulos */
+        /* APLICACIÓN DE TU FUENTE */
+        h1, .typo-exp { 
+            font-family: 'Bagayo Regular', 'Courier New', monospace; /* Fallback muy obvio para notar si falla */
+            text-transform: uppercase;
+        }
+        
         h1 { 
-            font-family: 'Bagayo Regular', sans-serif;
             font-weight: normal; 
             letter-spacing: 0.05em; 
             margin-bottom: 10px; 
             color: #fff; 
-            text-transform: uppercase;
             text-align: center;
         }
+        
+        .typo-exp { line-height: 0.85; }
 
-        /* Clase para aplicar la fuente en los elementos gráficos */
-        .typo-exp { 
-            font-family: 'Bagayo Regular', sans-serif; 
-            text-transform: uppercase; 
-            line-height: 0.85; 
-        }
-
-        /* --- ESTILOS GENERALES --- */
+        /* ESTILOS DE BANNERS */
         .intro-text { max-width: 600px; text-align: center; opacity: 0.8; margin-bottom: 30px; }
         .banner-group { display: flex; flex-direction: column; align-items: center; gap: 15px; }
         .banner-label { font-size: 0.9rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.1em; }
@@ -93,7 +92,7 @@
         }
         .ia-btn:hover { background: var(--text-color); }
 
-        /* --- BANNER 1 --- */
+        /* B1 */
         .b1 { width: 300px; height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .b1-status { font-size: 14px; font-weight: 600; letter-spacing: 0.1em; color: #555; display: flex; align-items: center; gap: 8px; animation: fadeOut 0.1s linear 3s forwards; }
         .b1-dot { width: 8px; height: 8px; background-color: var(--accent); border-radius: 50%; animation: pulse 1.5s infinite; }
@@ -101,7 +100,7 @@
         .b1-frag-reveal { font-size: 38px; position: absolute; opacity: 0; animation: glitch-reveal 0.1s linear 3.5s forwards, noise-anim 3s steps(5) infinite 3.6s; }
         #b1-ia-result { position: absolute; bottom: 45px; left: 15px; right: 15px; font-size: 11px; background: rgba(0,0,0,0.8); color: #fff; padding: 8px; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; z-index: 20; }
 
-        /* --- BANNER 2 --- */
+        /* B2 */
         .b2 { width: 728px; height: 90px; display: flex; align-items: center; justify-content: center; }
         .b2-bg-text-slider { position: absolute; width: 60%; text-align: center; height: 30px; overflow: hidden; }
         .b2-bg-text-wrapper { display: flex; flex-direction: column; animation: slide-text 9s steps(3) infinite; }
@@ -110,7 +109,7 @@
         .b2-frag-text { font-size: 32px; color: var(--text-color); background: var(--bg-color); padding: 0 20px; margin-right: 80px; }
         .b2-scanner { position: absolute; width: 5px; height: 100%; background: var(--highlight); box-shadow: 0 0 20px var(--highlight); opacity: 0.8; left: -10%; animation: scan-move-b2 6s ease-in-out infinite; }
 
-        /* --- BANNER 3 --- */
+        /* B3 */
         .b3 { width: 300px; height: 600px; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
         .b3-container { position: relative; height: 300px; font-size: 48px; line-height: 0.9; }
         .b3-p { position: absolute; width: 100%; opacity: 0; filter: blur(8px); transform: scale(1.1); }
@@ -136,14 +135,12 @@
             5% { opacity: 1; filter: blur(0); transform: scale(1); } 30% { opacity: 1; filter: blur(0.5px); color: var(--text-color); }
             35% { opacity: 0.15; filter: blur(2px); transform: scale(0.98); color: #555; } 100% { opacity: 0; }
         }
-
     </style>
 </head>
 <body>
-
-    <h1>FRAGMENTAR LA OBSOLESCENCIA // BAGAYO ROOT</h1>
+    <h1>FRAGMENTAR LA OBSOLESCENCIA // CDN ACTIVO</h1>
     <p class="intro-text">
-        Prueba de carga de fuente desde la raíz del repositorio.
+        Fuente <strong>Bagayo Regular</strong> cargada vía jsDelivr. Si ves letras estilo máquina de escribir, revisa el nombre del archivo.
     </p>
 
     <div class="banner-group">
@@ -153,12 +150,8 @@
             <div class="b1-status"><div class="b1-dot"></div>SISTEMA OPERATIVO</div>
             <div class="b1-error-msg">¡ERROR CRÍTICO!</div>
             <div class="typo-exp b1-frag-reveal">FRAG<br>MEN<br>TADO</div>
-            
-            <button id="b1-ia-trigger" class="ia-btn" style="top: 15px; right: 15px; opacity: 0; animation: fadeOut 0.1s 3.5s reverse backwards;">
-                ANALIZAR FALLO
-            </button>
+            <button id="b1-ia-trigger" class="ia-btn" style="top: 15px; right: 15px; opacity: 0; animation: fadeOut 0.1s 3.5s reverse backwards;">ANALIZAR FALLO</button>
             <div id="b1-ia-result"></div>
-
             <button class="cta" style="bottom: 15px; right: 15px; animation: fadeOut 0.1s 3s reverse backwards;">VER MUESTRA</button>
         </div>
     </div>
@@ -191,52 +184,34 @@
                 <div class="b3-p p2">NO ES<br>NOSTALGIA<br>ES POTENCIA</div>
                 <div class="b3-p p3">ROMPER<br>LA LÍNEA<br>DEL TIEMPO</div>
             </div>
-            
             <div id="b3-manifesto-area" class="b3-residue">
                 el residuo se vuelve signo<br>
                 el fallo se vuelve voz
             </div>
-            
-            <button id="b3-ia-trigger" class="ia-btn" style="bottom: 80px; right: 30px;">
-                NUEVO MANIFIESTO
-            </button>
-
+            <button id="b3-ia-trigger" class="ia-btn" style="bottom: 80px; right: 30px;">NUEVO MANIFIESTO</button>
             <button class="cta" style="bottom: 25px; right: 25px;">VISITAR</button>
         </div>
     </div>
 
     <script type="module">
         import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
-
-        // Simulación básica de IA para la demo
-        async function callGemini(prompt) {
-            return null; // Forzamos los fallbacks predefinidos para asegurar funcionalidad sin API Key
-        }
-
-        // B1
+        async function callGemini(prompt) { return null; }
+        
         const b1Btn = document.getElementById('b1-ia-trigger');
         const b1Result = document.getElementById('b1-ia-result');
         b1Btn.addEventListener('click', async () => {
             b1Btn.textContent = "⏳ ANALIZANDO...";
             b1Result.style.opacity = 1;
             b1Result.textContent = "Escaneando...";
-            setTimeout(() => {
-                b1Result.textContent = "> El error es la única verdad.";
-                b1Btn.textContent = "ANALIZAR FALLO";
-            }, 1500);
+            setTimeout(() => { b1Result.textContent = "> El error es la única verdad."; b1Btn.textContent = "ANALIZAR FALLO"; }, 1500);
         });
 
-        // B3
         const b3Btn = document.getElementById('b3-ia-trigger');
         const b3Area = document.getElementById('b3-manifesto-area');
         b3Btn.addEventListener('click', async () => {
             b3Btn.textContent = "⏳ GENERANDO...";
             b3Area.style.opacity = 0.3;
-            setTimeout(() => {
-                b3Area.innerHTML = "lo roto persiste<br>lo nuevo decae";
-                b3Area.style.opacity = 0.6;
-                b3Btn.textContent = "NUEVO MANIFIESTO";
-            }, 1500);
+            setTimeout(() => { b3Area.innerHTML = "lo roto persiste<br>lo nuevo decae"; b3Area.style.opacity = 0.6; b3Btn.textContent = "NUEVO MANIFIESTO"; }, 1500);
         });
     </script>
 </body>
